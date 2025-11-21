@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:17:22 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/20 14:42:29 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/21 12:37:46 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,16 @@ void	check_arg_err(int argc, char **argv, char **envp, int io_fd[2])
 {
 	if (io_fd[1] == -1)
 	{
-		perror("Error opening outfile");
-		cloesfd(io_fd[0]);
-		cloesfd(io_fd[1]);
+		perror("Error: Opening outfile");
+		close_fd(io_fd[0]);
+		close_fd(io_fd[1]);
+		exit(EXIT_FAILURE);
+	}
+	if (!check_command(argc, argv, envp))
+	{
+		close_fd(io_fd[0]);
+		close_fd(io_fd[1]);
+		perror("Error: Executing command");
 		exit(EXIT_FAILURE);
 	}
 }

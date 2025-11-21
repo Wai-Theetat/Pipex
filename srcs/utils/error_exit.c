@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/21 12:37:34 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/11/21 12:35:39 by tdharmar          #+#    #+#             */
+/*   Updated: 2025/11/21 12:37:20 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "pipex.h"
 
-# include "../libft/libft.h"
-# include <fcntl.h>
-# include <errno.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <stdio.h>
-
-void	open_file(int io_fd[2], char *infile, char *outfile);
-void	check_arg_err(int argc, char **argv, char **envp, int io_fd[2]);
-int		check_command(int argc, char **argv, char **envp);
-
-
-void	close_fd(int fd);
-
-#endif
+void close_fd(int fd)
+{
+	if (fd > 0)
+		close(fd);
+}

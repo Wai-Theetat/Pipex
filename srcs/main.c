@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:46:41 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/20 14:15:39 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/21 12:34:41 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	main(int argc, char **argv, char **envp)
 	}
 	open_file(io_fd, argv[1], argv[argc - 1]);
 	check_arg_err(argc, argv, envp, io_fd);
-	pipex(argc, argv, envp, io_fd);
+	// pipex(argc, argv, envp, io_fd);
 	return (0);
 }
