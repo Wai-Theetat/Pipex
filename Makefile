@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/20 01:29:50 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/20 14:19:08 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ CFLAGS			:=	-Wall -Wextra -Werror -g3
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/
 
-SRCS_FILES		:=	main.c
+SRCS_FILES		:=	main.c \
+					pipex/pipex.c \
+					utils/open_file.c
 
 SRCS			:=	$(SRCS_FILES:%.c=$(SRC_DIR)%.c)
 OBJS			:=	$(SRCS:%.c=%.o)
