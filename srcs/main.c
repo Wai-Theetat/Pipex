@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:46:41 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 15:30:41 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:49:44 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	int empty_cnt;
+	int		empty_cnt;
 
 	if (argc != 5)
 	{
@@ -25,9 +25,7 @@ int	main(int argc, char **argv, char **envp)
 	if (empty_cnt > 0)
 	{
 		while (empty_cnt--)
-			ft_putstr_fd("pipex: permission denied:\n", 2);
-		// exit(126);											<-- Real sh does not exit here
-				
+			ft_putstr_fd("pipex: permission denied:\n", 2);										//<-- Real sh does not exit here
 	}
 	return (0);
 }
