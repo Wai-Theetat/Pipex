@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: pioncha2 <pioncha2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 15:03:08 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/08/25 10:28:53 by pioncha2          #+#    #+#             */
+/*   Updated: 2025/08/25 10:34:09 by pioncha2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <fcntl.h>
-# include <errno.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <stdio.h>
+size_t	ft_strlen(const char *s)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+// The strlen() function calculates the length of the string pointed to by
+// s, excluding the terminating null byte ('\0').

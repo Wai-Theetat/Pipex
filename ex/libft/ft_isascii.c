@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: pioncha2 <pioncha2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 15:03:08 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/08/25 10:16:02 by pioncha2          #+#    #+#             */
+/*   Updated: 2025/08/25 10:29:09 by pioncha2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
+}
 
-# include "../libft/libft.h"
-# include <fcntl.h>
-# include <errno.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <stdio.h>
-
-#endif
+// isascii()
+// checks whether c is a 7-bit unsigned char value that  fits  into
+// the ASCII character set.

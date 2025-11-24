@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open_util.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:20:18 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 14:39:11 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/11/24 15:03:33 by tdharmar          #+#    #+#             */
+/*   Updated: 2025/11/24 15:03:55 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	open_file(int io_fd[2], char *infile, char *outfile)
+int	ft_check_empty_cmds(int argc, char **argv)
 {
-	if (!infile)
+	int		i;
+	int		cnt;
+
+	i = 2;
+	cnt = 0;
+	while (i < argc - 1)
 	{
-		io_fd[0] = 0;
-		io_fd[1] = open(outfile, O_WRONLY | O_CREAT | O_APPEND, 0644);
+		if (ft_strlen(argv[i]) == 0)
+			cnt++;
+		i++;
 	}
-	else
-	{
-		io_fd[0] = open(infile, O_RDONLY);
-		io_fd[1] = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	}
+	return (cnt);
 }

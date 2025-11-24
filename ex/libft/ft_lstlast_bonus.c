@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: pioncha2 <pioncha2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 15:03:08 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/08/26 12:21:43 by pioncha2          #+#    #+#             */
+/*   Updated: 2025/08/26 13:45:00 by pioncha2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <fcntl.h>
-# include <errno.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <stdio.h>
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*curr;
 
-#endif
+	curr = lst;
+	if (curr == NULL)
+		return (NULL);
+	while (curr->next != NULL)
+		curr = curr->next;
+	return (curr);
+}
+
+// Description 
+// Returns the last node of the list.

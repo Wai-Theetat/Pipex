@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/24 14:41:41 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/24 15:03:38 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ INC_DIR			:=	includes/
 SRC_DIR			:=	srcs/
 
 SRCS_FILES		:=	main.c \
-					utils/open_util.c
 
 SRCS			:=	$(SRCS_FILES:%.c=$(SRC_DIR)%.c)
 OBJS			:=	$(SRCS:%.c=%.o)
