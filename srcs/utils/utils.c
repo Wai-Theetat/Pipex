@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:03:33 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/24 15:03:55 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:20:40 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,10 @@ int	ft_check_empty_cmds(int argc, char **argv)
 		i++;
 	}
 	return (cnt);
+}
+
+void	error_exit(char *str)
+{
+	perror(str);
+	exit(EXIT_FAILURE);
 }
