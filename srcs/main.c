@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 09:56:27 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/29 12:25:46 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/29 12:36:12 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv, char **envp)
 		error_exit("Invalid number of argument");
 	filein = open(argv[1], O_RDONLY);
 	if (filein == -1)
-		error_exit("Error opening infile");
+		 error_no_file(argv[1]);
 	dup2(filein, STDIN_FILENO);
 	close(filein);
 	pipex_loop(argc, argv, envp);

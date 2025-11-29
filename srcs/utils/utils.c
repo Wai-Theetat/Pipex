@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:03:33 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/29 12:30:42 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/29 12:41:42 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,13 @@ void	ft_execute(char *cmd, char **envp)
 	}
 	if (execve(path, s_cmd, envp) == -1)
 		error_exit("Execve error");
+}
+
+void    error_no_file(char *str)
+{
+    ft_putstr_fd("pipex: ", 2);
+    ft_putstr_fd(strerror(errno), 2);
+    ft_putstr_fd(": ", 2);
+    ft_putendl_fd(str, 2);
+    exit(0);
 }
