@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/12/01 10:16:29 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:07:02 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	ft_execute(char *cmd, char **envp);
 char	*ft_find_path(char *cmd, char **envp);
 
 void	pipex_loop(int argc, char **argv, char **envp);
+
+void	ft_free_tab(char **tab);
 
 #endif

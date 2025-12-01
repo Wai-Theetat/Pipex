@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:03:33 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/12/01 10:39:55 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/12/01 12:07:44 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,14 @@ char	*ft_find_path(char *cmd, char **envp)
 		path = ft_strjoin(part_path, cmd);
 		free(part_path);
 		if (access(path, F_OK | X_OK) == 0)
+		{
+			ft_free_tab(paths);
 			return (path);
+		}
 		free(path);
 		i++;
 	}
+	ft_free_tab(paths);
 	return (NULL);
 }
 
@@ -75,6 +79,7 @@ void	ft_execute(char *cmd, char **envp)
 	s_cmd = ft_split(cmd, ' ');
 	if (!s_cmd || !s_cmd[0])
 	{
+		ft_free_tab(s_cmd);
 		ft_putstr_fd("pipex: permission denied:\n", 2);
 		exit(127);
 	}
@@ -84,10 +89,14 @@ void	ft_execute(char *cmd, char **envp)
 		ft_putstr_fd("pipex: command not found: ", 2);
 		ft_putstr_fd(s_cmd[0], 2);
 		ft_putstr_fd("\n", 2);
+		ft_free_tab(s_cmd);
 		exit(127);
 	}
 	if (execve(path, s_cmd, envp) == -1)
+	{
+		ft_free_tab(s_cmd);
 		error_exit("Execve error");
+	}
 }
 
 void	perror_no_file(char *str)

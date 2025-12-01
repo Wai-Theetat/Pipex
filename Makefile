@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/29 12:30:47 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/12/01 12:06:23 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR			:=	srcs/
 
 SRCS_FILES		:=	main.c \
 					pipex/pipex.c \
-					utils/utils.c
+					utils/utils.c utils/utils2.c
 
 SRCS			:=	$(SRCS_FILES:%.c=$(SRC_DIR)%.c)
 OBJS			:=	$(SRCS:%.c=%.o)
