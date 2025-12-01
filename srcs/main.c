@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 09:56:27 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/29 13:30:32 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:28:52 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ static void	handle_infile(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_putstr_fd("pipex: ", 2);
-		perror(file);
+		perror_no_file(file);
 		if (pipe(tmp_fd) == -1)
 			error_exit("Pipe error");
 		close(tmp_fd[1]);
@@ -43,8 +42,7 @@ static void	handle_outfile(int argc, char **argv, char **envp)
 	fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd == -1)
 	{
-		ft_putstr_fd("pipex: ", 2);
-		perror(argv[argc - 1]);
+		perror_no_file(argv[argc - 1]);
 		exit(EXIT_FAILURE);
 	}
 	pid = fork();
